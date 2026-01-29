@@ -28,10 +28,8 @@
     --radius-lg: 20px;
 }
 
-/* ======================================== */
-/* RESET AND BASE STYLES */
-/* ======================================== */
-* {
+
+ {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -293,9 +291,7 @@ header {
     transform: translateX(-50%);
 }
 
-/* ======================================== */
-/* SERVICES GRID */
-/* ======================================== */
+
 .services-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -425,9 +421,7 @@ header {
     margin-left: 16px;
 }
 
-/* ======================================== */
-/* GALLERY GRID - INSTAGRAM STYLE */
-/* ======================================== */
+
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -551,9 +545,7 @@ header {
     transform: scale(1.05);
 }
 
-/* ======================================== */
-/* VALUES GRID */
-/* ======================================== */
+
 .values-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -677,9 +669,7 @@ header {
     line-height: 1.6;
 }
 
-/* ======================================== */
-/* FORM STYLES */
-/* ======================================== */
+
 .form-group {
     margin-bottom: 28px;
 }
@@ -758,9 +748,7 @@ header {
     margin-bottom: 0;
 }
 
-/* ======================================== */
-/* SOCIAL LINKS */
-/* ======================================== */
+
 .social-links {
     display: flex;
     gap: 20px;
@@ -786,9 +774,7 @@ header {
     transform: translateY(-3px);
 }
 
-/* ======================================== */
-/* FOOTER */
-/* ======================================== */
+
 footer {
     background: linear-gradient(135deg, var(--dark-gray) 0%, #1A2A27 100%);
     padding: 80px 0 40px;
@@ -890,9 +876,7 @@ footer {
     box-shadow: 0 12px 40px rgba(37, 211, 102, 0.4);
 }
 
-/* ======================================== */
-/* MODAL STYLES */
-/* ======================================== */
+
 .modal-overlay {
     position: fixed;
     top: 0;
@@ -1007,9 +991,7 @@ footer {
     }
 }
 
-/* ======================================== */
-/* RESPONSIVE DESIGN - TABLET */
-/* ======================================== */
+
 @media (max-width: 1200px) {
     .container {
         max-width: 100%;
@@ -1480,4 +1462,5 @@ footer {
     .team-section .service-description {
         font-size: 8px;
     }
+
 }
