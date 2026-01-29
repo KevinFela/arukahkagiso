@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arukah Wellness | Home</title>
+    <title>Arukah Wellness | Gallery</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
@@ -24,10 +24,10 @@
             </button>
             
             <ul class="nav-links">
-                <li><a href="index.html" class="nav-link active">Home</a></li>
+                <li><a href="index.html" class="nav-link">Home</a></li>
                 <li><a href="services.html" class="nav-link">Services</a></li>
                 <li><a href="about.html" class="nav-link">About</a></li>
-                <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+                <li><a href="gallery.html" class="nav-link active">Gallery</a></li>
                 <li><a href="contact.html" class="nav-link">Contact</a></li>
                 <li><a href="#openBookingModal" class="nav-link booking-btn">Book Now</a></li>
             </ul>
@@ -35,136 +35,166 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="hero-section">
+    <section class="page-hero">
         <div class="container">
-            <div class="hero-content">
-                <h1>Arukah Wellness Spa</h1>
-                <p>Experience holistic wellness in a serene sanctuary designed for complete rejuvenation of mind, body, and spirit.</p>
-                <a href="#openBookingModal" class="cta-button">
-                    <i class="fas fa-calendar-check"></i>Book Your Wellness Journey
-                </a>
-            </div>
+            <h1 class="page-title">Our Wellness Sanctuary</h1>
+            <p class="page-subtitle">Explore our serene environment designed for complete relaxation and rejuvenation. Each space is thoughtfully created to provide the perfect atmosphere for your wellness journey.</p>
         </div>
     </section>
 
-    <!-- Welcome Section -->
+    <!-- Gallery -->
     <section class="section-padding">
         <div class="container">
-            <h2 class="section-title">Welcome to Your Wellness Sanctuary</h2>
-            <div class="about-content animate-on-scroll">
-                <div class="about-text">
-                    <p style="font-size: 18px; color: var(--text-light); line-height: 1.8; text-align: center; max-width: 800px; margin: 0 auto 40px;">
-                        At Arukah Wellness Spa, we believe true wellness is achieved through a harmonious balance of mind, body, and spirit. Our serene sanctuary offers premium treatments designed to help you reconnect with your inner peace.
-                    </p>
-                    
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-top: 50px;">
-                        <div class="value-item animate-on-scroll">
-                            <div class="value-icon">
-                                <i class="fas fa-spa"></i>
-                            </div>
-                            <h3 class="value-title">Premium Treatments</h3>
-                            <p>Professional massage, facial, and nail care services</p>
-                        </div>
-                        
-                        <div class="value-item animate-on-scroll">
-                            <div class="value-icon">
-                                <i class="fas fa-leaf"></i>
-                            </div>
-                            <h3 class="value-title">Natural Products</h3>
-                            <p>Organic and sustainable skincare range</p>
-                        </div>
-                        
-                        <div class="value-item animate-on-scroll">
-                            <div class="value-icon">
-                                <i class="fas fa-users"></i>
-                            </div>
-                            <h3 class="value-title">Expert Therapists</h3>
-                            <p>Certified professionals with years of experience</p>
-                        </div>
+            <h2 class="section-title">Our Wellness Sanctuary</h2>
+            <div class="gallery-grid">
+                <!-- Image G1 -->
+                <div class="gallery-item animate-on-scroll">
+                    <img src="assets/gallery-images/G1.jpeg" alt="Arukah Wellness Spa interior showing serene treatment room">
+                    <div class="gallery-overlay">
+                        <h3>G1 - Serene Treatment Room</h3>
+                        <p>Our tranquil massage room with soft lighting</p>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Valentine's Special Banner -->
-    <section class="section-padding" style="background: linear-gradient(135deg, #e91e63 0%, #880e4f 100%); color: white;">
-        <div class="container">
-            <div class="valentine-special animate-on-scroll" style="text-align: center; padding: 40px 20px; border-radius: 20px;">
-                <h2 style="font-size: 36px; margin-bottom: 20px; color: white;">
-                    <i class="fas fa-heart"></i> Valentine's Special
-                </h2>
-                <h3 style="font-size: 28px; margin-bottom: 20px; color: #ffccd5;">R650 for Two</h3>
-                <p style="font-size: 18px; margin-bottom: 30px; max-width: 600px; margin-left: auto; margin-right: auto;">
-                    Treat yourself and your loved one to an unforgettable wellness experience including full body massage, hot stones, foot treatment, and more!
-                </p>
-                <a href="services.html" class="cta-button" style="background: white; color: #e91e63; border: none; text-decoration: none;">
-                    <i class="fas fa-heart"></i>View Valentine's Package
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Preview -->
-    <section class="section-padding" style="background-color: var(--light-green);">
-        <div class="container">
-            <h2 class="section-title">Our Services</h2>
-            <div class="services-grid">
-                <div class="service-card animate-on-scroll">
-                    <div class="service-icon">
-                        <i class="fas fa-spa"></i>
-                    </div>
-                    <h3 class="service-title">Wellness Packages</h3>
-                    <p class="service-description">Complete relaxation with therapeutic massage and holistic treatments</p>
-                    <a href="services.html" class="submit-btn" style="margin-top: 24px; text-decoration: none; display: inline-block;">
-                        <i class="fas fa-eye"></i>View Packages
-                    </a>
                 </div>
                 
-                <div class="service-card animate-on-scroll">
-                    <div class="service-icon">
-                        <i class="fas fa-hand-sparkles"></i>
+                <!-- Image G2 -->
+                <div class="gallery-item animate-on-scroll">
+                    <img src="assets/gallery-images/G2.jpeg" alt="Facial treatment area at Arukah Wellness">
+                    <div class="gallery-overlay">
+                        <h3>G2 - Facial Treatment Area</h3>
+                        <p>Specialized space for premium skincare treatments</p>
                     </div>
-                    <h3 class="service-title">Nail Care</h3>
-                    <p class="service-description">Premium gel manicure and pedicure services with expert craftsmanship</p>
-                    <a href="services.html" class="submit-btn" style="margin-top: 24px; text-decoration: none; display: inline-block;">
-                        <i class="fas fa-eye"></i>View Services
-                    </a>
                 </div>
                 
-                <div class="service-card animate-on-scroll">
-                    <div class="service-icon">
-                        <i class="fas fa-star"></i>
+                <!-- Image G3 -->
+                <div class="gallery-item animate-on-scroll">
+                    <img src="assets/gallery-images/G3.jpeg" alt="Professional nail care station at Arukah Wellness">
+                    <div class="gallery-overlay">
+                        <h3>G3 - Luxury Nail Station</h3>
+                        <p>Professional setup for manicure and pedicure</p>
                     </div>
-                    <h3 class="service-title">Special Packages</h3>
-                    <p class="service-description">Prenatal, kids wellness, and seasonal special treatments</p>
-                    <a href="services.html" class="submit-btn" style="margin-top: 24px; text-decoration: none; display: inline-block;">
-                        <i class="fas fa-eye"></i>View All
-                    </a>
+                </div>
+                
+                <!-- Image G4 -->
+                <div class="gallery-item animate-on-scroll">
+                    <img src="assets/gallery-images/G4.jpeg" alt="Relaxation lounge at Arukah Wellness">
+                    <div class="gallery-overlay">
+                        <h3>G4 - Relaxation Lounge</h3>
+                        <p>Comfortable waiting area with soothing ambiance</p>
+                    </div>
+                </div>
+                
+                <!-- Image G5 -->
+                <div class="gallery-item animate-on-scroll">
+                    <img src="assets/gallery-images/G5.jpeg" alt="Welcome reception area of Arukah Wellness Spa">
+                    <div class="gallery-overlay">
+                        <h3>G5 - Welcome Reception</h3>
+                        <p>Our inviting entrance and check-in area</p>
+                    </div>
+                </div>
+                
+                <!-- Image G6 -->
+                <div class="gallery-item animate-on-scroll">
+                    <img src="assets/gallery-images/G6.jpeg" alt="Natural skincare products display at Arukah Wellness">
+                    <div class="gallery-overlay">
+                        <h3>G6 - Wellness Products</h3>
+                        <p>Our selection of premium organic skincare</p>
+                    </div>
+                </div>
+                
+                <!-- Image G7 -->
+                <div class="gallery-item animate-on-scroll">
+                    <img src="assets/gallery-images/G7.jpeg" alt="Therapeutic massage in progress at Arukah Wellness">
+                    <div class="gallery-overlay">
+                        <h3>G7 - Massage Therapy</h3>
+                        <p>Professional therapeutic massage session</p>
+                    </div>
+                </div>
+                
+                <!-- Image G8 -->
+                <div class="gallery-item animate-on-scroll">
+                    <img src="assets/gallery-images/G8.jpeg" alt="Foot scrub and massage treatment at Arukah Wellness">
+                    <div class="gallery-overlay">
+                        <h3>G8 - Foot Care Treatment</h3>
+                        <p>Revitalizing foot scrub and massage service</p>
+                    </div>
+                </div>
+                
+                <!-- Image G9 -->
+                <div class="gallery-item animate-on-scroll">
+                    <img src="assets/gallery-images/G9.jpeg" alt="Beautiful nail art designs at Arukah Wellness">
+                    <div class="gallery-overlay">
+                        <h3>G9 - Nail Art Designs</h3>
+                        <p>Creative and elegant nail artwork</p>
+                    </div>
+                </div>
+                
+                <!-- Image G10 -->
+                <div class="gallery-item animate-on-scroll">
+                    <img src="assets/gallery-images/G10.jpeg" alt="Main entrance of Arukah Wellness Spa">
+                    <div class="gallery-overlay">
+                        <h3>G10 - Spa Entrance</h3>
+                        <p>Welcoming facade of our wellness sanctuary</p>
+                    </div>
+                </div>
+                
+                <!-- Image G11 -->
+                <div class="gallery-item animate-on-scroll">
+                    <img src="assets/gallery-images/G11.jpeg" alt="Wellness philosophy display at Arukah Wellness">
+                    <div class="gallery-overlay">
+                        <h3>G11 - Our Wellness Approach</h3>
+                        <p>Holistic philosophy guiding our treatments</p>
+                    </div>
+                </div>
+                
+                <!-- Image G12 -->
+                <div class="gallery-item animate-on-scroll">
+                    <img src="assets/gallery-images/G12.jpeg" alt="Professional spa tools and equipment">
+                    <div class="gallery-overlay">
+                        <h3>G12 - Professional Equipment</h3>
+                        <p>High-quality tools for premium treatments</p>
+                    </div>
+                </div>
+                
+                <!-- Image G13 -->
+                <div class="gallery-item animate-on-scroll">
+                    <img src="assets/gallery-images/G13.jpeg" alt="Additional treatment area at Arukah Wellness">
+                    <div class="gallery-overlay">
+                        <h3>G13 - Treatment Area</h3>
+                        <p>Additional serene space for wellness services</p>
+                    </div>
+                </div>
+                
+                <!-- Image G14 -->
+                <div class="gallery-item animate-on-scroll">
+                    <img src="assets/gallery-images/G14.jpeg" alt="Valentine's Special package setup">
+                    <div class="gallery-overlay">
+                        <h3>G14 - Valentine's Special</h3>
+                        <p>Romantic couple's wellness experience</p>
+                    </div>
+                </div>
+                
+                <!-- Image G15 -->
+                <div class="gallery-item animate-on-scroll">
+                    <img src="assets/gallery-images/G15.jpeg" alt="Calming atmosphere for relaxation">
+                    <div class="gallery-overlay">
+                        <h3>G15 - Wellness Environment</h3>
+                        <p>Calming atmosphere for complete relaxation</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- CTA Section -->
-    <section class="section-padding">
-        <div class="container">
-            <div class="whatsapp-booking animate-on-scroll">
-                <h2 class="whatsapp-title">
-                    <i class="fab fa-whatsapp"></i>Easy WhatsApp Booking
-                </h2>
-                <p class="whatsapp-description">
-                    Book your appointment directly through WhatsApp for instant confirmation. Our team is ready to help you begin your wellness journey.
-                </p>
-                <div style="text-align: center; margin-top: 40px;">
-                    <button class="cta-button" id="openBookingModalHome">
-                        <i class="fas fa-calendar-check"></i>Book Appointment Now
-                    </button>
-                    <p style="color: var(--text-light); margin-top: 20px; font-size: 14px;">
-                        <i class="fas fa-phone"></i> WhatsApp: +27 62 299 0998
-                    </p>
-                </div>
-            </div>
+    <section class="section-padding" style="background-color: var(--light-green);">
+        <div class="container" style="text-align: center;">
+            <h2 class="section-title">Experience Our Sanctuary</h2>
+            <p style="max-width: 700px; margin: 0 auto 40px; color: var(--text-light);">
+                Ready to experience the peace and rejuvenation of Arukah Wellness? Book your appointment and begin your wellness journey today.
+            </p>
+            <button class="cta-button" id="openBookingModalGallery">
+                <i class="fas fa-calendar-check"></i>Book Your Visit
+            </button>
         </div>
     </section>
 
@@ -192,7 +222,7 @@
                     
                     <div class="contact-item">
                         <i class="fas fa-map-marker-alt"></i>
-                        <span>Arukah Wellness Kagiso, 15871 Rebecca Tlharipe Street</span>
+                        <span>Arukah Wellness, 15871 Rebecca Tlharipe Street</span>
                     </div>
                     
                     <div class="contact-item">
@@ -213,16 +243,16 @@
             </div>
             
             <div class="footer-links">
-                <a href="index.html" class="footer-link active">Home</a>
+                <a href="index.html" class="footer-link">Home</a>
                 <a href="services.html" class="footer-link">Services</a>
                 <a href="about.html" class="footer-link">About</a>
-                <a href="gallery.html" class="footer-link">Gallery</a>
+                <a href="gallery.html" class="footer-link active">Gallery</a>
                 <a href="contact.html" class="footer-link">Contact</a>
                 <a href="#openBookingModal" class="footer-link booking-btn">Book Now</a>
             </div>
             
             <div class="copyright">
-                <p>&copy; <span class="current-year">2025</span> Arukah Wellness Kagiso Spa. All Rights Reserved. | Designed with <i class="fas fa-heart" style="color: var(--accent-gold);"></i> for wellness</p>
+                <p>&copy; <span class="current-year">2025</span> Arukah Wellness Kagiso. All rights reserved. | Designed with <i class="fas fa-heart" style="color: var(--accent-gold);"></i> for wellness</p>
                 <p style="margin-top: 10px; font-size: 12px; color: rgba(255, 255, 255, 0.6); display: flex; align-items: center; justify-content: center; gap: 8px;">
                     Developed by 
                     <a href="https://factorx.co.za" target="_blank" style="color: var(--accent-gold); text-decoration: none; display: flex; align-items: center; gap: 5px; font-weight: 600;">
@@ -234,7 +264,7 @@
         </div>
     </footer>
 
-    <!-- WhatsApp Float Button -->
+    <!-- WhatsApp Float -->
     <a href="https://wa.me/27622990998" class="whatsapp-float" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>

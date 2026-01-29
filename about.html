@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arukah Wellness Spa | About Us</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="assets/arukahlogo.jpeg" type="image/x-icon">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container nav-container">
+            <div class="logo-container">
+                <a href="index.html">
+                    <img src="assets/arukahlogo.jpeg" alt="Arukah Wellness Logo" class="logo">
+                </a>
+            </div>
+            
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="services.html" class="nav-link">Services</a></li>
+                <li><a href="about.html" class="nav-link active">About</a></li>
+                <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li><a href="#openBookingModal" class="nav-link booking-btn">Book Now</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="page-hero">
+            <div class="container">
+                <h1 class="page-title">Our Story</h1>
+                <p class="page-subtitle">Discover the essence of Arukah Wellness Spa – where ancient healing meets modern luxury.</p>
+            </div>
+        </section>
+
+        <!-- About Content -->
+        <section class="container">
+            <div class="about-section animate-on-scroll">
+                <div class="about-content">
+                    <div class="about-image">
+                        <img src="assets/gallery-images/G3.jpeg" alt="Arukah Spa Interior">
+                    </div>
+                    
+                    <div class="about-text">
+                        <h2 class="section-title">Welcome to Arukah</h2>
+                        <p>Arukah, meaning "health and wellness" in its purest form, represents our commitment to holistic healing and rejuvenation. Founded in 2023, our spa was born from a vision to create a sanctuary where individuals can escape the stresses of modern life and reconnect with their inner peace.</p>
+                        
+                        <p>Our founder, a certified wellness practitioner with over 15 years of experience in holistic therapies, recognized the need for a space that combines traditional healing methods with contemporary luxury. Thus, Arukah Wellness Spa was created – a haven where every treatment is thoughtfully designed to nurture mind, body, and spirit.</p>
+                        
+                        <p>We believe that true wellness extends beyond physical treatments. It encompasses emotional balance, mental clarity, and spiritual harmony. This philosophy guides every aspect of our services, from the products we use to the ambiance we create.</p>
+                    </div>
+                </div>
+
+                <!-- Our Philosophy -->
+                <div class="about-content" style="margin-top: 100px;">
+                    <div class="about-text">
+                        <h2 class="section-title">Our Philosophy</h2>
+                        <p>At Arukah, we embrace a holistic approach to wellness. We understand that each individual is unique, with specific needs and preferences. That's why we offer personalized treatments tailored to your specific wellness journey.</p>
+                        
+                        <p>Our core principles:</p>
+                        <ul style="color: var(--text-light); margin: 20px 0 20px 30px; line-height: 1.8;">
+                            <li><strong>Personalized Care:</strong> Every treatment is customized to your needs</li>
+                            <li><strong>Natural Ingredients:</strong> We use only premium, organic products</li>
+                            <li><strong>Expert Therapists:</strong> Our team is highly trained and certified</li>
+                            <li><strong>Sustainable Practices:</strong> We care for our environment</li>
+                            <li><strong>Continual Learning:</strong> We stay updated with the latest wellness trends</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="about-image">
+                        <img src="assets/gallery-images/G1.jpeg" alt="Wellness Philosophy">
+                    </div>
+                </div>
+
+                <!-- Our Values -->
+                <div class="values-section" style="margin-top: 100px;">
+                    <h2 class="section-title">Our Values</h2>
+                    <div class="values-grid">
+                        <div class="value-item animate-on-scroll">
+                            <div class="value-icon">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                            <h3 class="value-title">Compassion</h3>
+                            <p>We approach every client with empathy and understanding, creating a safe and nurturing environment.</p>
+                        </div>
+                        
+                        <div class="value-item animate-on-scroll">
+                            <div class="value-icon">
+                                <i class="fas fa-leaf"></i>
+                            </div>
+                            <h3 class="value-title">Purity</h3>
+                            <p>We use only the purest ingredients and maintain the highest standards of cleanliness and hygiene.</p>
+                        </div>
+                        
+                        <div class="value-item animate-on-scroll">
+                            <div class="value-icon">
+                                <i class="fas fa-hands-helping"></i>
+                            </div>
+                            <h3 class="value-title">Excellence</h3>
+                            <p>We are committed to excellence in every treatment, ensuring exceptional results and experiences.</p>
+                        </div>
+                        
+                        <div class="value-item animate-on-scroll">
+                            <div class="value-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <h3 class="value-title">Community</h3>
+                            <p>We believe in building lasting relationships with our clients and supporting our local community.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Team Section -->
+                <div class="team-section" style="margin-top: 100px;">
+                    <h2 class="section-title">Meet Our Team</h2>
+                    <p class="page-subtitle" style="text-align: center; margin-bottom: 60px;">
+                        Our certified therapists and technicians are dedicated to providing exceptional wellness experiences
+                    </p>
+                    <div class="services-grid">
+                        <!-- Team Member 1 -->
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <i class="fas fa-user-md"></i>
+                            </div>
+                            <h3 class="service-title">Esther</h3>
+                            <p class="service-description">Therapist & Manager</p>
+                            <p>Lead therapist with expertise in holistic treatments and spa management</p>
+                        </div>
+                        
+                        <!-- Team Member 2 -->
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <i class="fas fa-hand-sparkles"></i>
+                            </div>
+                            <h3 class="service-title">Nombuso</h3>
+                            <p class="service-description">Nail Technician</p>
+                            <p>Specialist in gel manicures and creative nail art designs</p>
+                        </div>
+                        
+                        <!-- Team Member 3 -->
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <i class="fas fa-spa"></i>
+                            </div>
+                            <h3 class="service-title">Olga</h3>
+                            <p class="service-description">Therapist & Nail Tech</p>
+                            <p>Dual-trained in therapeutic massage and nail care services</p>
+                        </div>
+                        
+                        <!-- Team Member 4 -->
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <i class="fas fa-heartbeat"></i>
+                            </div>
+                            <h3 class="service-title">Kea</h3>
+                            <p class="service-description">Therapist & Nail Tech</p>
+                            <p>Skilled in both therapeutic treatments and premium nail services</p>
+                        </div>
+                        
+                        <!-- Team Member 5 -->
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <i class="fas fa-user-nurse"></i>
+                            </div>
+                            <h3 class="service-title">Nurse</h3>
+                            <p class="service-description">Therapist & Event Organizer</p>
+                            <p>Combines clinical expertise with event planning for wellness experiences</p>
+                        </div>
+                        
+                        <!-- Team Member 6 -->
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <i class="fas fa-hands"></i>
+                            </div>
+                            <h3 class="service-title">Tumi</h3>
+                            <p class="service-description">Therapist</p>
+                            <p>Specializes in deep tissue and relaxation massage therapies</p>
+                        </div>
+                        
+                        <!-- Team Member 7 -->
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <i class="fas fa-leaf"></i>
+                            </div>
+                            <h3 class="service-title">Banyana</h3>
+                            <p class="service-description">Therapist</p>
+                            <p>Focuses on holistic wellness and natural healing techniques</p>
+                        </div>
+                        
+                        <!-- Team Member 8 -->
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <i class="fas fa-hand-holding-heart"></i>
+                            </div>
+                            <h3 class="service-title">Brenda</h3>
+                            <p class="service-description">Therapist</p>
+                            <p>Experienced in customized treatment plans for individual needs</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="container animate-on-scroll">
+            <div class="whatsapp-booking" style="margin: 100px 0;">
+                <h2 class="whatsapp-title">
+                    <i class="fas fa-star"></i>Experience Arukah Wellness
+                </h2>
+                <p class="whatsapp-description">
+                    Ready to begin your wellness journey? Book your first appointment and discover the Arukah difference.
+                </p>
+                <div style="text-align: center; margin-top: 40px;">
+                    <button class="cta-button" id="openBookingModalAbout" style="padding: 20px 50px; font-size: 20px;">
+                        <i class="fas fa-calendar-check"></i>Book Your First Visit
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <div class="logo-container" style="height: 40px; margin-bottom: 24px;">
+                        <img src="assets/arukahlogo.jpeg" alt="Arukah Wellness Logo" class="logo">
+                    </div>
+                    <p style="color: rgba(255, 255, 255, 0.8); max-width: 400px; line-height: 1.6;">
+                        A sanctuary for holistic wellness, offering premium spa treatments in a serene environment designed for your complete rejuvenation.
+                    </p>
+                    <div class="social-links" style="margin-top: 30px;">
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-pinterest-p"></i></a>
+                    </div>
+                </div>
+                
+                <div class="contact-info-footer">
+                    <h3 style="color: var(--accent-gold); margin-bottom: 24px; font-size: 20px;">Contact Info</h3>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Arukah Wellness Kagiso, 15871 Rebecca Tlharipe Street</span>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fab fa-whatsapp"></i>
+                        <span>WhatsApp: 062 299 0998</span>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>support@arukahkagiso.co.za</span>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <span>Mon-Sun: 9:00 AM - 7:00 PM</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-links">
+                <a href="index.html" class="footer-link">Home</a>
+                <a href="services.html" class="footer-link">Services</a>
+                <a href="about.html" class="footer-link active">About</a>
+                <a href="gallery.html" class="footer-link">Gallery</a>
+                <a href="contact.html" class="footer-link">Contact</a>
+                <a href="#openBookingModal" class="footer-link booking-btn">Book Now</a>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; <span class="current-year">2025</span> Arukah Wellness Spa. All Rights Reserved. | Designed with <i class="fas fa-heart" style="color: var(--accent-gold);"></i> for wellness</p>
+                <p style="margin-top: 10px; font-size: 12px; color: rgba(255, 255, 255, 0.6); display: flex; align-items: center; justify-content: center; gap: 8px;">
+                    Developed by 
+                    <a href="https://factorx.co.za" target="_blank" style="color: var(--accent-gold); text-decoration: none; display: flex; align-items: center; gap: 5px; font-weight: 600;">
+                        <img src="assets/gallery-images/4566147c08db463cf893fb46021945b8.jpg" alt="FactorX Logo" style="height: 16px; width: auto; vertical-align: middle;">
+                        factorx.co.za
+                    </a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/27622990998" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Booking Modal -->
+    <div class="modal-overlay" id="bookingModal">
+        <div class="modal-content">
+            <button class="close-modal">
+                <i class="fas fa-times"></i>
+            </button>
+            
+            <h2 class="modal-title">Book Your Appointment</h2>
+            
+            <form id="bookingForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label required" for="clientName">Full Name</label>
+                        <input type="text" class="form-input" id="clientName" required placeholder="Your full name">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label required" for="clientPhone">Phone Number</label>
+                        <input type="tel" class="form-input" id="clientPhone" required placeholder="Your WhatsApp number">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label" for="clientEmail">Email Address</label>
+                    <input type="email" class="form-input" id="clientEmail" placeholder="your@email.com">
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label required" for="serviceType">Service Type</label>
+                        <select class="form-select" id="serviceType" required>
+                            <option value="">Select a service</option>
+                            <option value="Wellness Package">Wellness Package</option>
+                            <option value="Full Body Massage + Foot Scrub">Full Body Massage + Foot Scrub (R250)</option>
+                            <option value="Full Body Massage + Hot Stones + Foot Scrub">Full Body Massage + Hot Stones + Foot Scrub (R350)</option>
+                            <option value="Full Body Massage + Basic Facial + Foot Scrub">Full Body Massage + Basic Facial + Foot Scrub (R350)</option>
+                            <option value="Ultimate Wellness Package">Ultimate Wellness Package (R500)</option>
+                            <option value="Prenatal Massage + Foot Scrub">Prenatal Massage + Foot Scrub (R200)</option>
+                            <option value="Kids Massage + Foot Scrub">Kids Massage + Foot Scrub (R150)</option>
+                            <option value="Manicure Service">Manicure Service</option>
+                            <option value="Pedicure Service">Pedicure Service</option>
+                            <option value="Other">Other Service</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label required" for="appointmentDate">Preferred Date</label>
+                        <input type="date" class="form-input" id="appointmentDate" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label required" for="appointmentTime">Preferred Time</label>
+                    <select class="form-select" id="appointmentTime" required>
+                        <option value="">Select time</option>
+                        <option value="9:00 AM">9:00 AM</option>
+                        <option value="10:00 AM">10:00 AM</option>
+                        <option value="11:00 AM">11:00 AM</option>
+                        <option value="12:00 PM">12:00 PM</option>
+                        <option value="1:00 PM">1:00 PM</option>
+                        <option value="2:00 PM">2:00 PM</option>
+                        <option value="3:00 PM">3:00 PM</option>
+                        <option value="4:00 PM">4:00 PM</option>
+                        <option value="5:00 PM">5:00 PM</option>
+                        <option value="6:00 PM">6:00 PM</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label" for="specialRequests">Special Requests</label>
+                    <textarea class="form-textarea" id="specialRequests" placeholder="Any medical conditions, allergies, or special preferences..."></textarea>
+                </div>
+                
+                <button type="submit" class="submit-btn">
+                    <i class="fab fa-whatsapp"></i>Submit via WhatsApp
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

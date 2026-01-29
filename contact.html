@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arukah Wellness Spa | Contact Us</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="assets/arukahlogo.jpeg" type="image/x-icon">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container nav-container">
+            <div class="logo-container">
+                <a href="index.html">
+                    <img src="assets/arukahlogo.jpeg" alt="Arukah Wellness Logo" class="logo">
+                </a>
+            </div>
+            
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="services.html" class="nav-link">Services</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+                <li><a href="contact.html" class="nav-link active">Contact</a></li>
+                <li><a href="#openBookingModal" class="nav-link booking-btn">Book Now</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="page-hero">
+            <div class="container">
+                <h1 class="page-title">Contact Us</h1>
+                <p class="page-subtitle">We're here to help you on your wellness journey. Reach out with any questions or to book your appointment.</p>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="container">
+            <div class="contact-grid animate-on-scroll">
+                <!-- Contact Information -->
+                <div class="contact-info">
+                    <h2 class="section-title" style="text-align: left; margin-bottom: 40px;">Get In Touch</h2>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Visit Us</h3>
+                            <p>Arukah Wellness Spa<br>
+                            15871 Rebecca Tlharipe Street<br>
+                            Pretoria, South Africa</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>WhatsApp Us</h3>
+                            <p>+27 62 299 0998<br>
+                            <small>Quickest way to reach us</small></p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Call Us</h3>
+                            <p>+27 12 345 6789<br>
+                            <small>Monday - Friday, 9AM - 6PM</small></p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Email Us</h3>
+                            <p>support@arukahwellness.co.za<br>
+                            bookings@arukahwellness.co.za</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Business Hours</h3>
+                            <p>
+                                Monday - Friday: 9:00 AM - 7:00 PM<br>
+                                Saturday: 9:00 AM - 5:00 PM<br>
+                                Sunday: 10:00 AM - 3:00 PM<br>
+                                <small>By appointment only</small>
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div style="margin-top: 40px;">
+                        <h3 style="color: var(--gold); margin-bottom: 20px;">Follow Us</h3>
+                        <div class="social-links" style="justify-content: flex-start; gap: 15px;">
+                            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-pinterest-p"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="contact-form">
+                    <h2 class="section-title" style="text-align: left; margin-bottom: 40px;">Send a Message</h2>
+                    
+                    <form id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label required" for="contactName">Full Name</label>
+                                <input type="text" class="form-input" id="contactName" required placeholder="Your full name">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label required" for="contactEmail">Email Address</label>
+                                <input type="email" class="form-input" id="contactEmail" required placeholder="your@email.com">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label" for="contactPhone">Phone Number</label>
+                            <input type="tel" class="form-input" id="contactPhone" placeholder="Your contact number">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label required" for="contactSubject">Subject</label>
+                            <select class="form-select" id="contactSubject" required>
+                                <option value="">Select a subject</option>
+                                <option value="General Inquiry">General Inquiry</option>
+                                <option value="Booking Question">Booking Question</option>
+                                <option value="Service Information">Service Information</option>
+                                <option value="Partnership">Partnership Opportunity</option>
+                                <option value="Feedback">Feedback/Suggestion</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label required" for="contactMessage">Your Message</label>
+                            <textarea class="form-textarea" id="contactMessage" required placeholder="How can we help you?"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">
+                            <i class="fas fa-paper-plane"></i>Send Message
+                        </button>
+                    </form>
+                    
+                    <!-- Quick WhatsApp CTA -->
+                    <div class="whatsapp-booking" style="margin-top: 50px; padding: 30px;">
+                        <h3 class="whatsapp-title" style="font-size: 22px;">
+                            <i class="fab fa-whatsapp"></i>Prefer WhatsApp?
+                        </h3>
+                        <p style="color: var(--text-light); margin: 15px 0;">
+                            For faster response, message us directly on WhatsApp.
+                        </p>
+                        <button class="cta-button" id="openBookingModalContact" style="width: 100%;">
+                            <i class="fab fa-whatsapp"></i>Book via WhatsApp
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Map Section -->
+        <section class="container animate-on-scroll" style="margin: 100px 0;">
+            <h2 class="section-title">Find Us</h2>
+            <div style="background-color: rgba(255, 255, 255, 0.03); border-radius: 12px; overflow: hidden; margin-top: 40px; border: 1px solid rgba(212, 180, 131, 0.1);">
+                <div style="height: 400px; background-color: rgba(58, 107, 95, 0.1); display: flex; align-items: center; justify-content: center;">
+                    <div style="text-align: center; padding: 40px;">
+                        <i class="fas fa-map-marker-alt" style="font-size: 60px; color: var(--accent-gold); margin-bottom: 20px;"></i>
+                        <h3 style="color: var(--dark-gray); margin-bottom: 15px;">Arukah Wellness Spa</h3>
+                        <p style="color: var(--text-light);">15871 Rebecca Tlharipe Street, Pretoria</p>
+                        <a href="https://maps.google.com/?q=Arukah+Wellness+Spa+15871+Rebecca+Tlharipe+Street" 
+                           class="cta-button" 
+                           style="margin-top: 30px; display: inline-block;">
+                            <i class="fas fa-directions"></i>Get Directions
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="container animate-on-scroll">
+            <div class="services-section">
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                
+                <div class="services-grid" style="margin-top: 40px;">
+                    <div class="service-card">
+                        <h3 class="service-title">What should I bring?</h3>
+                        <p>Just yourself! We provide robes, slippers, and all amenities. For massages, wear comfortable clothing.</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <h3 class="service-title">How early should I arrive?</h3>
+                        <p>Please arrive 15 minutes before your appointment to complete paperwork and relax in our lounge.</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <h3 class="service-title">What's your cancellation policy?</h3>
+                        <p>We require 24 hours notice for cancellations. Late cancellations may incur a 50% fee.</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <h3 class="service-title">Do you offer gift cards?</h3>
+                        <p>Yes! Purchase digital or physical gift cards online or in-spa. They never expire.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <div class="logo-container" style="height: 40px; margin-bottom: 24px;">
+                        <img src="assets/arukahlogo.jpeg" alt="Arukah Wellness Logo" class="logo">
+                    </div>
+                    <p style="color: rgba(255, 255, 255, 0.8); max-width: 400px; line-height: 1.6;">
+                        A sanctuary for holistic wellness, offering premium spa treatments in a serene environment designed for your complete rejuvenation.
+                    </p>
+                    <div class="social-links" style="margin-top: 30px;">
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-pinterest-p"></i></a>
+                    </div>
+                </div>
+                
+                <div class="contact-info-footer">
+                    <h3 style="color: var(--accent-gold); margin-bottom: 24px; font-size: 20px;">Contact Info</h3>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Arukah Wellness Kagiso, 15871 Rebecca Tlharipe Street</span>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fab fa-whatsapp"></i>
+                        <span>WhatsApp: 062 299 0998</span>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>support@arukahKagiso.co.za</span>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <span>Mon-Sun: 9:00 AM - 7:00 PM</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-links">
+                <a href="index.html" class="footer-link">Home</a>
+                <a href="services.html" class="footer-link">Services</a>
+                <a href="about.html" class="footer-link">About</a>
+                <a href="gallery.html" class="footer-link">Gallery</a>
+                <a href="contact.html" class="footer-link active">Contact</a>
+                <a href="#openBookingModal" class="footer-link booking-btn">Book Now</a>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; <span class="current-year">2025</span> Arukah WellnessKagiso Spa. All Rights Reserved. | Designed with <i class="fas fa-heart" style="color: var(--accent-gold);"></i> for wellness</p>
+                <p style="margin-top: 10px; font-size: 12px; color: rgba(255, 255, 255, 0.6); display: flex; align-items: center; justify-content: center; gap: 8px;">
+                    Developed by 
+                    <a href="https://factorx.co.za" target="_blank" style="color: var(--accent-gold); text-decoration: none; display: flex; align-items: center; gap: 5px; font-weight: 600;">
+                        <img src="assets/gallery-images/4566147c08db463cf893fb46021945b8.jpg" alt="FactorX Logo" style="height: 16px; width: auto; vertical-align: middle;">
+                        factorx.co.za
+                    </a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/27622990998" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Booking Modal -->
+    <div class="modal-overlay" id="bookingModal">
+        <div class="modal-content">
+            <button class="close-modal">
+                <i class="fas fa-times"></i>
+            </button>
+            
+            <h2 class="modal-title">Book Your Appointment</h2>
+            
+            <form id="bookingForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label required" for="clientName">Full Name</label>
+                        <input type="text" class="form-input" id="clientName" required placeholder="Your full name">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label required" for="clientPhone">Phone Number</label>
+                        <input type="tel" class="form-input" id="clientPhone" required placeholder="Your WhatsApp number">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label" for="clientEmail">Email Address</label>
+                    <input type="email" class="form-input" id="clientEmail" placeholder="your@email.com">
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label required" for="serviceType">Service Type</label>
+                        <select class="form-select" id="serviceType" required>
+                            <option value="">Select a service</option>
+                            <option value="Wellness Package">Wellness Package</option>
+                            <option value="Full Body Massage + Foot Scrub">Full Body Massage + Foot Scrub (R250)</option>
+                            <option value="Full Body Massage + Hot Stones + Foot Scrub">Full Body Massage + Hot Stones + Foot Scrub (R350)</option>
+                            <option value="Full Body Massage + Basic Facial + Foot Scrub">Full Body Massage + Basic Facial + Foot Scrub (R350)</option>
+                            <option value="Ultimate Wellness Package">Ultimate Wellness Package (R500)</option>
+                            <option value="Prenatal Massage + Foot Scrub">Prenatal Massage + Foot Scrub (R200)</option>
+                            <option value="Kids Massage + Foot Scrub">Kids Massage + Foot Scrub (R150)</option>
+                            <option value="Manicure Service">Manicure Service</option>
+                            <option value="Pedicure Service">Pedicure Service</option>
+                            <option value="Other">Other Service</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label required" for="appointmentDate">Preferred Date</label>
+                        <input type="date" class="form-input" id="appointmentDate" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label required" for="appointmentTime">Preferred Time</label>
+                    <select class="form-select" id="appointmentTime" required>
+                        <option value="">Select time</option>
+                        <option value="9:00 AM">9:00 AM</option>
+                        <option value="10:00 AM">10:00 AM</option>
+                        <option value="11:00 AM">11:00 AM</option>
+                        <option value="12:00 PM">12:00 PM</option>
+                        <option value="1:00 PM">1:00 PM</option>
+                        <option value="2:00 PM">2:00 PM</option>
+                        <option value="3:00 PM">3:00 PM</option>
+                        <option value="4:00 PM">4:00 PM</option>
+                        <option value="5:00 PM">5:00 PM</option>
+                        <option value="6:00 PM">6:00 PM</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label" for="specialRequests">Special Requests</label>
+                    <textarea class="form-textarea" id="specialRequests" placeholder="Any medical conditions, allergies, or special preferences..."></textarea>
+                </div>
+                
+                <button type="submit" class="submit-btn">
+                    <i class="fab fa-whatsapp"></i>Submit via WhatsApp
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
