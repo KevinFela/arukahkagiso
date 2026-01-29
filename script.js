@@ -1,6 +1,4 @@
-// script.js - Modern Wellness Website
 
-// Mobile menu toggle
 const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
 const navLinks = document.querySelector('.nav-links');
 
@@ -544,4 +542,5 @@ document.querySelectorAll('.cta-button, .submit-btn[data-service]').forEach(butt
             console.log('Service booking button clicked:', this.getAttribute('data-service'));
         }
     });
+
 });
