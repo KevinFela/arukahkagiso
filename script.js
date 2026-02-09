@@ -1,4 +1,3 @@
-
 const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
 const navLinks = document.querySelector('.nav-links');
 
@@ -523,6 +522,37 @@ document.addEventListener('DOMContentLoaded', () => {
         maxDate.setMonth(maxDate.getMonth() + 3);
         dateInput.max = maxDate.toISOString().split('T')[0];
     }
+    
+    // Initialize contact form if it exists
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('contactName').value.trim();
+            const email = document.getElementById('contactEmail').value.trim();
+            const phone = document.getElementById('contactPhone').value.trim();
+            const subject = document.getElementById('contactSubject').value;
+            const message = document.getElementById('contactMessage').value.trim();
+            
+            if (!name || !email || !subject || !message) {
+                alert('Please fill in all required fields.');
+                return;
+            }
+            
+            // Create email message
+            const emailBody = `Name: ${name}%0D%0AEmail: ${email}%0D%0APhone: ${phone || 'Not provided'}%0D%0ASubject: ${subject}%0D%0A%0D%0AMessage:%0D%0A${message}`;
+            const mailtoLink = `mailto:support@arukahwellness.co.za?subject=Contact Form: ${subject}&body=${emailBody}`;
+            
+            window.location.href = mailtoLink;
+            
+            // Reset form after delay
+            setTimeout(() => {
+                contactForm.reset();
+                alert('Thank you for your message! An email client should have opened. If not, please email us at support@arukahwellness.co.za');
+            }, 1000);
+        });
+    }
 });
 
 // WhatsApp float button click tracking
@@ -544,3 +574,80 @@ document.querySelectorAll('.cta-button, .submit-btn[data-service]').forEach(butt
     });
 });
 
+// Fix for February Specials package booking
+document.querySelectorAll('[data-service*="Besties"]').forEach(button => {
+    button.addEventListener('click', function(e) {
+        if (bookingModal) {
+            bookingModal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+            
+            // Auto-select the Besties package
+            const serviceType = document.getElementById('serviceType');
+            if (serviceType) {
+                for (let i = 0; i < serviceType.options.length; i++) {
+                    if (serviceType.options[i].text.includes('Besties for Life Package')) {
+                        serviceType.selectedIndex = i;
+                        break;
+                    }
+                }
+            }
+            
+            setTimeout(() => {
+                const firstInput = document.getElementById('clientName');
+                if (firstInput) firstInput.focus();
+            }, 100);
+        }
+    });
+});
+
+// Fix for Self Love package booking
+document.querySelectorAll('[data-service*="Self Love"]').forEach(button => {
+    button.addEventListener('click', function(e) {
+        if (bookingModal) {
+            bookingModal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+            
+            // Auto-select the Self Love package
+            const serviceType = document.getElementById('serviceType');
+            if (serviceType) {
+                for (let i = 0; i < serviceType.options.length; i++) {
+                    if (serviceType.options[i].text.includes('Self Love Package')) {
+                        serviceType.selectedIndex = i;
+                        break;
+                    }
+                }
+            }
+            
+            setTimeout(() => {
+                const firstInput = document.getElementById('clientName');
+                if (firstInput) firstInput.focus();
+            }, 100);
+        }
+    });
+});
+
+// Fix for Age with Grace package booking
+document.querySelectorAll('[data-service*="Age with Grace"]').forEach(button => {
+    button.addEventListener('click', function(e) {
+        if (bookingModal) {
+            bookingModal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+            
+            // Auto-select the Age with Grace package
+            const serviceType = document.getElementById('serviceType');
+            if (serviceType) {
+                for (let i = 0; i < serviceType.options.length; i++) {
+                    if (serviceType.options[i].text.includes('Age with Grace Package')) {
+                        serviceType.selectedIndex = i;
+                        break;
+                    }
+                }
+            }
+            
+            setTimeout(() => {
+                const firstInput = document.getElementById('clientName');
+                if (firstInput) firstInput.focus();
+            }, 100);
+        }
+    });
+});
