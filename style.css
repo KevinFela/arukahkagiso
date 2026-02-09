@@ -680,15 +680,15 @@ header {
 /* FORM STYLES */
 /* ======================================== */
 .form-group {
-    margin-bottom: 28px;
+    margin-bottom: 20px;
 }
 
 .form-label {
     display: block;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
     color: var(--text-dark);
     font-weight: 500;
-    font-size: 14px;
+    font-size: 13px;
     letter-spacing: 0.5px;
 }
 
@@ -701,10 +701,10 @@ header {
 .form-select,
 .form-textarea {
     width: 100%;
-    padding: 16px 20px;
+    padding: 12px 16px;
     border: 2px solid var(--light-gray);
-    border-radius: 10px;
-    font-size: 16px;
+    border-radius: 8px;
+    font-size: 14px;
     font-family: 'Montserrat', sans-serif;
     transition: var(--transition);
     background: var(--white);
@@ -715,11 +715,11 @@ header {
 .form-textarea:focus {
     outline: none;
     border-color: var(--primary-green);
-    box-shadow: 0 0 0 4px rgba(58, 107, 95, 0.1);
+    box-shadow: 0 0 0 3px rgba(58, 107, 95, 0.1);
 }
 
 .form-textarea {
-    min-height: 140px;
+    min-height: 100px;
     resize: vertical;
 }
 
@@ -727,9 +727,9 @@ header {
     background: linear-gradient(135deg, var(--primary-green) 0%, var(--secondary-green) 100%);
     color: var(--white);
     border: none;
-    padding: 18px 32px;
-    border-radius: 10px;
-    font-size: 16px;
+    padding: 14px 24px;
+    border-radius: 8px;
+    font-size: 14px;
     font-weight: 600;
     cursor: pointer;
     transition: var(--transition);
@@ -748,8 +748,8 @@ header {
 
 .form-row {
     display: flex;
-    gap: 24px;
-    margin-bottom: 24px;
+    gap: 16px;
+    margin-bottom: 20px;
 }
 
 .form-row .form-group {
@@ -911,10 +911,10 @@ footer {
     background: var(--white);
     border-radius: var(--radius-lg);
     width: 100%;
-    max-width: 600px;
-    max-height: 90vh;
+    max-width: 500px;
+    max-height: 85vh;
     overflow-y: auto;
-    padding: 60px;
+    padding: 40px 30px;
     position: relative;
     animation: modalSlideIn 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -933,15 +933,15 @@ footer {
 
 .close-modal {
     position: absolute;
-    top: 24px;
-    right: 24px;
+    top: 16px;
+    right: 16px;
     background: var(--light-gray);
     border: none;
-    font-size: 20px;
+    font-size: 16px;
     color: var(--dark-gray);
     cursor: pointer;
-    width: 44px;
-    height: 44px;
+    width: 36px;
+    height: 36px;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -955,9 +955,9 @@ footer {
 }
 
 .modal-title {
-    font-size: 36px;
+    font-size: 28px;
     color: var(--primary-green);
-    margin-bottom: 40px;
+    margin-bottom: 30px;
     text-align: center;
     font-weight: 400;
 }
@@ -1092,7 +1092,7 @@ footer {
     /* Form layout becomes vertical */
     .form-row {
         flex-direction: column;
-        gap: 20px;
+        gap: 12px;
     }
     
     /* Page title size */
@@ -1107,7 +1107,9 @@ footer {
     
     /* Modal padding */
     .modal-content {
-        padding: 40px 24px;
+        padding: 30px 20px;
+        max-width: 90%;
+        margin: 0 20px;
     }
     
     /* Contact info padding */
@@ -1369,6 +1371,25 @@ footer {
         display: block;
         margin-bottom: 8px;
     }
+    
+    /* Fix for February Specials on mobile */
+    .valentine-special {
+        min-height: auto;
+        padding: 20px;
+    }
+    
+    /* Fix form inputs on mobile */
+    .form-input,
+    .form-select,
+    .form-textarea {
+        padding: 10px 14px;
+        font-size: 13px;
+    }
+    
+    .submit-btn {
+        padding: 12px 20px;
+        font-size: 13px;
+    }
 }
 
 /* ======================================== */
@@ -1479,4 +1500,87 @@ footer {
     .team-section .service-description {
         font-size: 8px;
     }
+    
+    /* Modal adjustments for very small screens */
+    .modal-content {
+        padding: 25px 16px;
+        max-width: 95%;
+    }
+    
+    .modal-title {
+        font-size: 22px;
+        margin-bottom: 20px;
+    }
+    
+    .form-input,
+    .form-select,
+    .form-textarea {
+        padding: 8px 12px;
+        font-size: 12px;
+    }
+    
+    .form-textarea {
+        min-height: 80px;
+    }
+    
+    .submit-btn {
+        padding: 10px 16px;
+        font-size: 12px;
+    }
+}
+
+/* ======================================== */
+/* FIXED FORM STYLES - Smaller and Stable */
+/* ======================================== */
+
+/* Prevent horizontal scrolling on mobile */
+.modal-content::-webkit-scrollbar {
+    width: 4px;
+}
+
+.modal-content::-webkit-scrollbar-track {
+    background: var(--light-gray);
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+    background: var(--primary-green);
+    border-radius: 2px;
+}
+
+/* Ensure form stays stable and doesn't shift */
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+    box-shadow: 0 0 0 3px rgba(58, 107, 95, 0.1);
+}
+
+/* Fix for service options text wrapping */
+.form-select option {
+    font-size: 13px;
+    padding: 4px;
+    word-break: break-word;
+}
+
+/* Ensure form fields don't overflow on small screens */
+.form-input,
+.form-select {
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+/* Fix for February Specials layout */
+.valentine-special {
+    min-height: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.valentine-special ul {
+    margin-bottom: 15px;
+    flex-grow: 1;
+}
+
+.valentine-special button {
+    margin-top: auto;
 }
