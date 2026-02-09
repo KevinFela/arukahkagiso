@@ -43,57 +43,88 @@
             </div>
         </section>
 
-        <!-- Valentine's Special Banner -->
+        <!-- February Specials Banner -->
         <section class="section-padding" style="background: linear-gradient(135deg, #e91e63 0%, #880e4f 100%); color: white;">
             <div class="container">
-                <div class="valentine-special animate-on-scroll" style="text-align: center; padding: 40px 20px; border-radius: 20px;">
-                    <h2 style="font-size: 36px; margin-bottom: 20px; color: white;">
-                        <i class="fas fa-heart"></i> Valentine's Special
-                    </h2>
-                    <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 40px;">
-                        <div style="flex: 1; min-width: 300px;">
-                            <h3 style="font-size: 28px; margin-bottom: 20px; color: #ffccd5;">Celebrate the month of love with us</h3>
-                            <ul style="text-align: left; list-style: none; margin-bottom: 30px;">
-                                <li style="margin-bottom: 15px; font-size: 18px;">
-                                    <i class="fas fa-heart" style="color: #ffccd5; margin-right: 10px;"></i>
-                                    De-stress Full body massage includes hot stones
-                                </li>
-                                <li style="margin-bottom: 15px; font-size: 18px;">
-                                    <i class="fas fa-heart" style="color: #ffccd5; margin-right: 10px;"></i>
-                                    Foot exfoliation & massage
-                                </li>
-                                <li style="margin-bottom: 15px; font-size: 18px;">
-                                    <i class="fas fa-heart" style="color: #ffccd5; margin-right: 10px;"></i>
-                                    Neck & shoulder massage
-                                </li>
-                                <li style="margin-bottom: 15px; font-size: 18px;">
-                                    <i class="fas fa-heart" style="color: #ffccd5; margin-right: 10px;"></i>
-                                    Complimentary gift
-                                </li>
-                                <li style="margin-bottom: 15px; font-size: 18px;">
-                                    <i class="fas fa-heart" style="color: #ffccd5; margin-right: 10px;"></i>
-                                    Sparkling juice
-                                </li>
-                            </ul>
-                            <div style="background: rgba(255, 255, 255, 0.2); padding: 20px; border-radius: 15px; display: inline-block;">
-                                <div style="font-size: 14px; color: #ffccd5; margin-bottom: 5px;">Special Price</div>
-                                <div style="font-size: 42px; font-weight: bold; color: white;">R650</div>
-                                <div style="font-size: 18px; color: #ffccd5;">for two</div>
-                            </div>
+                <h2 class="section-title" style="color: white; text-align: center; margin-bottom: 40px;">February Specials</h2>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 30px;">
+                    <!-- Valentine's Special -->
+                    <div id="valentine" class="valentine-special animate-on-scroll" style="background: rgba(255, 255, 255, 0.1); padding: 30px; border-radius: 15px; backdrop-filter: blur(10px);">
+                        <h3 style="font-size: 24px; margin-bottom: 15px; color: #ffccd5;">
+                            <i class="fas fa-heart"></i> Valentine's Special
+                        </h3>
+                        <p style="font-size: 18px; margin-bottom: 10px; color: white;">R650 for Two</p>
+                        <ul style="text-align: left; list-style: none; margin-bottom: 20px; color: rgba(255, 255, 255, 0.9);">
+                            <li style="margin-bottom: 10px;"><i class="fas fa-heart" style="color: #ffccd5; margin-right: 10px;"></i>De-stress Full body massage includes hot stones</li>
+                            <li style="margin-bottom: 10px;"><i class="fas fa-heart" style="color: #ffccd5; margin-right: 10px;"></i>Foot exfoliation & massage</li>
+                            <li style="margin-bottom: 10px;"><i class="fas fa-heart" style="color: #ffccd5; margin-right: 10px;"></i>Neck & shoulder massage</li>
+                            <li style="margin-bottom: 10px;"><i class="fas fa-heart" style="color: #ffccd5; margin-right: 10px;"></i>Complimentary gift</li>
+                            <li><i class="fas fa-heart" style="color: #ffccd5; margin-right: 10px;"></i>Sparkling juice</li>
+                        </ul>
+                        <button class="cta-button" data-service="Valentine's Special Package" style="background: white; color: #e91e63; border: none; width: 100%;">
+                            <i class="fas fa-heart"></i>Book Valentine's Package
+                        </button>
+                    </div>
+                    
+                    <!-- Besties for Life -->
+                    <div id="besties" class="valentine-special animate-on-scroll" style="background: rgba(255, 255, 255, 0.1); padding: 30px; border-radius: 15px; backdrop-filter: blur(10px);">
+                        <h3 style="font-size: 24px; margin-bottom: 15px; color: #ffccd5;">
+                            <i class="fas fa-users"></i> Besties for Life
+                        </h3>
+                        <p style="font-size: 14px; margin-bottom: 10px; color: #ffccd5; font-style: italic; font-weight: 500;">
+                            "May your friendship flourish and withstand the test of time"
+                        </p>
+                        <p style="font-size: 18px; margin-bottom: 10px; color: white;">R200 for 2 (Under 18)</p>
+                        <ul style="text-align: left; list-style: none; margin-bottom: 20px; color: rgba(255, 255, 255, 0.9);">
+                            <li style="margin-bottom: 10px;"><i class="fas fa-spa" style="color: #ffccd5; margin-right: 10px;"></i>Full Body Massage</li>
+                            <li><i class="fas fa-ice-cream" style="color: #ffccd5; margin-right: 10px;"></i>Complementary Ice Cream</li>
+                        </ul>
+                        <button class="cta-button" data-service="Besties for Life Package" style="background: white; color: #e91e63; border: none; width: 100%;">
+                            <i class="fas fa-users"></i>Book Besties Package
+                        </button>
+                    </div>
+                    
+                    <!-- Self Love -->
+                    <div id="selflove" class="valentine-special animate-on-scroll" style="background: rgba(255, 255, 255, 0.1); padding: 30px; border-radius: 15px; backdrop-filter: blur(10px);">
+                        <h3 style="font-size: 24px; margin-bottom: 15px; color: #ffccd5;">
+                            <i class="fas fa-heartbeat"></i> Self Love
+                        </h3>
+                        <p style="font-size: 14px; margin-bottom: 10px; color: #ffccd5; font-style: italic; font-weight: 500;">
+                            "Love yourself first, and everything else falls into line"
+                        </p>
+                        <p style="font-size: 18px; margin-bottom: 10px; color: white;">R250 per person</p>
+                        <ul style="text-align: left; list-style: none; margin-bottom: 20px; color: rgba(255, 255, 255, 0.9);">
+                            <li style="margin-bottom: 10px;"><i class="fas fa-spa" style="color: #ffccd5; margin-right: 10px;"></i>Full Body Massage</li>
+                            <li style="margin-bottom: 10px;"><i class="fas fa-face-smile" style="color: #ffccd5; margin-right: 10px;"></i>Facial Steaming (Express Facial)</li>
+                            <li style="margin-bottom: 10px;"><i class="fas fa-hand-sparkles" style="color: #ffccd5; margin-right: 10px;"></i>Foot Scrub</li>
+                            <li><i class="fas fa-glass-cheers" style="color: #ffccd5; margin-right: 10px;"></i>Complementary Drink</li>
+                        </ul>
+                        <button class="cta-button" data-service="Self Love Package" style="background: white; color: #e91e63; border: none; width: 100%;">
+                            <i class="fas fa-heartbeat"></i>Book Self Love Package
+                        </button>
+                    </div>
+                    
+                    <!-- Age with Grace -->
+                    <div id="agewithgrace" class="valentine-special animate-on-scroll" style="background: rgba(255, 255, 255, 0.1); padding: 30px; border-radius: 15px; backdrop-filter: blur(10px);">
+                        <h3 style="font-size: 24px; margin-bottom: 15px; color: #ffccd5;">
+                            <i class="fas fa-star"></i> Age with Grace
+                        </h3>
+                        <p style="font-size: 14px; margin-bottom: 10px; color: #ffccd5; font-style: italic; font-weight: 500;">
+                            "Aging has a wonderful beauty, and we should have respect for that"
+                        </p>
+                        <p style="font-size: 18px; margin-bottom: 10px; color: white;">R150 (60+ years)</p>
+                        <ul style="text-align: left; list-style: none; margin-bottom: 20px; color: rgba(255, 255, 255, 0.9);">
+                            <li style="margin-bottom: 10px;"><i class="fas fa-spa" style="color: #ffccd5; margin-right: 10px;"></i>Full Body Massage</li>
+                            <li><i class="fas fa-hand-sparkles" style="color: #ffccd5; margin-right: 10px;"></i>Foot Scrub</li>
+                        </ul>
+                        <div style="background: rgba(255, 255, 255, 0.2); padding: 15px; border-radius: 10px; margin-bottom: 20px;">
+                            <p style="color: #ffccd5; font-size: 14px; margin-bottom: 5px;">Add-on:</p>
+                            <p style="color: white; font-size: 16px;">Facial: +R50</p>
                         </div>
-                        <div style="flex: 1; min-width: 300px;">
-                            <div style="background: rgba(255, 255, 255, 0.1); padding: 30px; border-radius: 20px;">
-                                <h4 style="font-size: 22px; margin-bottom: 20px; color: #ffccd5;">
-                                    <i class="fas fa-gift"></i> Perfect Couple's Experience
-                                </h4>
-                                <p style="font-size: 16px; margin-bottom: 30px; line-height: 1.6;">
-                                    Treat yourself and your loved one to an unforgettable wellness experience. Our Valentine's package includes side-by-side treatments in our couple's room.
-                                </p>
-                                <button class="cta-button" id="openBookingModalValentine" style="background: white; color: #e91e63; border: none;">
-                                    <i class="fas fa-heart"></i>Book Valentine's Package
-                                </button>
-                            </div>
-                        </div>
+                        <button class="cta-button" data-service="Age with Grace Package" style="background: white; color: #e91e63; border: none; width: 100%;">
+                            <i class="fas fa-star"></i>Book Age with Grace
+                        </button>
                     </div>
                 </div>
             </div>
@@ -267,14 +298,6 @@
                                     <span class="price">R200.00</span>
                                 </div>
                                 <div class="price-item">
-                                    <span>Polygel on natural nail</span>
-                                    <span class="price">R150.00</span>
-                                </div>
-                                <div class="price-item">
-                                    <span>Polygel + design</span>
-                                    <span class="price">R200.00</span>
-                                </div>
-                                <div class="price-item">
                                     <span>Plain gel set on tip</span>
                                     <span class="price">R200.00</span>
                                 </div>
@@ -309,14 +332,6 @@
                                 <div class="price-item">
                                     <span>Plain gel set + design</span>
                                     <span class="price">R150.00</span>
-                                </div>
-                                <div class="price-item">
-                                    <span>Polygel plain</span>
-                                    <span class="price">R150.00</span>
-                                </div>
-                                <div class="price-item">
-                                    <span>Polygel plain + design</span>
-                                    <span class="price">R200.00</span>
                                 </div>
                             </div>
                             <button class="submit-btn" style="margin-top: 24px;" data-service="Pedicure Service">
@@ -425,7 +440,7 @@
                     
                     <div class="contact-item">
                         <i class="fas fa-envelope"></i>
-                        <span>support@arukahKagiso.co.za</span>
+                        <span>support@arukahkagiso.co.za</span>
                     </div>
                     
                     <div class="contact-item">
@@ -495,6 +510,9 @@
                         <select class="form-select" id="serviceType" required>
                             <option value="">Select a service</option>
                             <option value="Valentine's Special Package">Valentine's Special Package (R650 for two)</option>
+                            <option value="Besties for Life Package">Besties for Life Package (R200 for two, Under 18)</option>
+                            <option value="Self Love Package">Self Love Package (R250 per person)</option>
+                            <option value="Age with Grace Package">Age with Grace Package (R150, 60+ years)</option>
                             <option value="Wellness Package">Wellness Package</option>
                             <option value="Full Body Massage + Foot Scrub">Full Body Massage + Foot Scrub (R250)</option>
                             <option value="Full Body Massage + Hot Stones + Foot Scrub">Full Body Massage + Hot Stones + Foot Scrub (R350)</option>
