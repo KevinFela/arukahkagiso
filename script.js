@@ -1,180 +1,236 @@
-// Arukah Wellness Spa - Main JavaScript
-document.addEventListener('DOMContentLoaded', function() {
-    console.log('Arukah Wellness Spa loaded');
-    
-    // ========== MOBILE MENU ==========
-    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-    const navLinks = document.querySelector('.nav-links');
-    
-    if (mobileMenuBtn && navLinks) {
-        mobileMenuBtn.addEventListener('click', function() {
-            navLinks.classList.toggle('active');
-            const isActive = navLinks.classList.contains('active');
-            mobileMenuBtn.innerHTML = isActive ? 
-                '<i class="fas fa-times"></i>' : 
-                '<i class="fas fa-bars"></i>';
-            
-            // Prevent body scroll when menu is open
-            document.body.style.overflow = isActive ? 'hidden' : 'auto';
-        });
+// script.js - Modern Wellness Website
+
+// Mobile menu toggle
+const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+const navLinks = document.querySelector('.nav-links');
+
+if (mobileMenuBtn) {
+    mobileMenuBtn.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        const icon = navLinks.classList.contains('active') ? 
+            '<i class="fas fa-times"></i>' : 
+            '<i class="fas fa-bars"></i>';
+        mobileMenuBtn.innerHTML = icon;
         
-        // Close menu when clicking a link
-        document.querySelectorAll('.nav-link').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-                document.body.style.overflow = 'auto';
-            });
+        // Add body lock when menu is open
+        if (navLinks.classList.contains('active')) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'auto';
+        }
+    });
+}
+
+// Close mobile menu when clicking a link
+document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+        mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+        document.body.style.overflow = 'auto';
+    });
+});
+
+// Modal functionality
+const bookingModal = document.getElementById('bookingModal');
+const closeModalBtn = document.querySelector('.close-modal');
+const modalOverlay = document.querySelector('.modal-overlay');
+
+// Open modal when clicking any "Book Now" button
+document.querySelectorAll('[href="#openBookingModal"], #openBookingModal, #openBookingModalAbout, #openBookingModalServices, #openBookingModalGallery, #openBookingModalContact, #openBookingModalCTA, #openBookingModalHome, #openBookingModalValentine').forEach(button => {
+    if (button.tagName === 'A') {
+        button.addEventListener('click', (e) => {
+            e.preventDefault();
+            if (bookingModal) {
+                bookingModal.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+                
+                // Focus on first input field
+                setTimeout(() => {
+                    const firstInput = document.getElementById('clientName');
+                    if (firstInput) firstInput.focus();
+                }, 100);
+            }
+        });
+    } else if (button.tagName === 'BUTTON') {
+        button.addEventListener('click', (e) => {
+            e.preventDefault();
+            if (bookingModal) {
+                bookingModal.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+                
+                // Focus on first input field
+                setTimeout(() => {
+                    const firstInput = document.getElementById('clientName');
+                    if (firstInput) firstInput.focus();
+                }, 100);
+            }
         });
     }
-    
-    // ========== BOOKING MODAL ==========
-    const bookingModal = document.getElementById('bookingModal');
-    const closeModalBtn = document.querySelector('.close-modal');
-    
-    // Function to open modal
-    function openBookingModal(service = '') {
+});
+
+// Auto-fill service when booking from service buttons
+document.querySelectorAll('button[data-service]').forEach(button => {
+    button.addEventListener('click', (e) => {
+        e.preventDefault();
         if (bookingModal) {
             bookingModal.style.display = 'flex';
             document.body.style.overflow = 'hidden';
             
-            // Auto-fill service if provided
-            if (service) {
-                const serviceSelect = document.getElementById('serviceType');
-                if (serviceSelect) {
-                    // Try to find and select the service
-                    for (let i = 0; i < serviceSelect.options.length; i++) {
-                        if (serviceSelect.options[i].value.includes(service) || 
-                            serviceSelect.options[i].text.includes(service)) {
-                            serviceSelect.selectedIndex = i;
-                            break;
-                        }
+            // Auto-select the service
+            const serviceType = document.getElementById('serviceType');
+            const serviceValue = button.getAttribute('data-service');
+            
+            if (serviceType) {
+                // Find the matching option
+                for (let i = 0; i < serviceType.options.length; i++) {
+                    if (serviceType.options[i].text.includes(serviceValue)) {
+                        serviceType.selectedIndex = i;
+                        break;
                     }
                 }
             }
             
-            // Focus on first input
+            // Focus on first input field
             setTimeout(() => {
                 const firstInput = document.getElementById('clientName');
                 if (firstInput) firstInput.focus();
             }, 100);
         }
-    }
-    
-    // Open modal from all "Book Now" buttons
-    document.querySelectorAll('[href="#openBookingModal"], .booking-btn, .book-btn, #openBookingModal, [id*="openBookingModal"]').forEach(element => {
-        if (element.tagName === 'A') {
-            element.addEventListener('click', function(e) {
-                e.preventDefault();
-                openBookingModal();
-            });
-        } else if (element.tagName === 'BUTTON') {
-            element.addEventListener('click', function(e) {
-                e.preventDefault();
-                const service = this.getAttribute('data-service') || '';
-                openBookingModal(service);
-            });
-        }
     });
-    
-    // Close modal
-    if (closeModalBtn && bookingModal) {
-        closeModalBtn.addEventListener('click', function() {
+});
+
+// Close modal
+if (closeModalBtn) {
+    closeModalBtn.addEventListener('click', () => {
+        bookingModal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    });
+}
+
+// Close modal when clicking outside
+if (modalOverlay) {
+    modalOverlay.addEventListener('click', (e) => {
+        if (e.target === modalOverlay) {
             bookingModal.style.display = 'none';
             document.body.style.overflow = 'auto';
-        });
-        
-        // Close when clicking outside modal
-        bookingModal.addEventListener('click', function(e) {
-            if (e.target === bookingModal) {
-                bookingModal.style.display = 'none';
-                document.body.style.overflow = 'auto';
-            }
-        });
-        
-        // Close with Escape key
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape' && bookingModal.style.display === 'flex') {
-                bookingModal.style.display = 'none';
-                document.body.style.overflow = 'auto';
-            }
+        }
+    });
+}
+
+// Close modal with Escape key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && bookingModal && bookingModal.style.display === 'flex') {
+        bookingModal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+});
+
+// Booking form submission
+const bookingForm = document.getElementById('bookingForm');
+if (bookingForm) {
+    // Set minimum date to today
+    const today = new Date().toISOString().split('T')[0];
+    const dateInput = document.getElementById('appointmentDate');
+    if (dateInput) dateInput.min = today;
+    
+    // Set maximum date to 3 months from now
+    const maxDate = new Date();
+    maxDate.setMonth(maxDate.getMonth() + 3);
+    dateInput.max = maxDate.toISOString().split('T')[0];
+    
+    // Format date for display
+    function formatDate(dateString) {
+        const date = new Date(dateString);
+        return date.toLocaleDateString('en-GB', {
+            weekday: 'long',
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
         });
     }
     
-    // ========== BOOKING FORM ==========
-    const bookingForm = document.getElementById('bookingForm');
-    if (bookingForm) {
-        // Set min date to today
-        const today = new Date().toISOString().split('T')[0];
-        const dateInput = document.getElementById('appointmentDate');
-        if (dateInput) {
-            dateInput.min = today;
-            
-            // Set max date to 3 months from now
-            const maxDate = new Date();
-            maxDate.setMonth(maxDate.getMonth() + 3);
-            dateInput.max = maxDate.toISOString().split('T')[0];
+    // Format time for display
+    function formatTime(timeString) {
+        return timeString;
+    }
+    
+    bookingForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        // Get form values
+        const name = document.getElementById('clientName').value.trim();
+        const phone = document.getElementById('clientPhone').value.trim();
+        const email = document.getElementById('clientEmail').value.trim();
+        const service = document.getElementById('serviceType').value;
+        const date = document.getElementById('appointmentDate').value;
+        const time = document.getElementById('appointmentTime').value;
+        const notes = document.getElementById('specialRequests').value.trim();
+        
+        // Validate required fields
+        if (!name || !phone || !service || !date || !time) {
+            alert('Please fill in all required fields marked with *.');
+            return;
         }
         
-        bookingForm.addEventListener('submit', function(e) {
-            e.preventDefault();
+        // Validate date is not in the past
+        const selectedDate = new Date(date);
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
+        
+        if (selectedDate < today) {
+            alert('Please select a date in the future.');
+            return;
+        }
+        
+        // Create professional WhatsApp message
+        let message = `*NEW BOOKING REQUEST - Arukah Wellness Spa*\n\n`;
+        
+        message += `*CLIENT INFORMATION:*\n`;
+        message += `• Name: ${name}\n`;
+        message += `• Phone: ${phone}\n`;
+        if (email) {
+            message += `• Email: ${email}\n`;
+        }
+        message += `\n`;
+        
+        message += `*BOOKING DETAILS:*\n`;
+        message += `• Service: ${service}\n`;
+        message += `• Date: ${formatDate(date)}\n`;
+        message += `• Time: ${formatTime(time)}\n`;
+        message += `\n`;
+        
+        if (notes) {
+            message += `*SPECIAL REQUESTS / NOTES:*\n`;
+            message += `${notes}\n`;
+            message += `\n`;
+        }
+        
+        message += `*LOCATION:*\n`;
+        message += `Arukah Wellness Spa\n`;
+        message += `15871 Rebecca Tlharipe Street, Pretoria\n`;
+        message += `\n`;
+        
+        message += `---\n`;
+        message += `Sent via Arukah Wellness Website\n`;
+        message += `Please confirm availability\n`;
+        
+        // WhatsApp number (South Africa)
+        const whatsappNumber = '27622990998';
+        const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+        
+        // Show loading state
+        const submitBtn = bookingForm.querySelector('.submit-btn');
+        const originalText = submitBtn.innerHTML;
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing...';
+        submitBtn.disabled = true;
+        
+        // Open WhatsApp after a short delay
+        setTimeout(() => {
+            // Open WhatsApp in new tab
+            window.open(whatsappUrl, '_blank');
             
-            // Get form values
-            const name = document.getElementById('clientName').value.trim();
-            const phone = document.getElementById('clientPhone').value.trim();
-            const email = document.getElementById('clientEmail')?.value.trim() || '';
-            const service = document.getElementById('serviceType').value;
-            const date = document.getElementById('appointmentDate').value;
-            const time = document.getElementById('appointmentTime').value;
-            const notes = document.getElementById('specialRequests')?.value.trim() || '';
-            
-            // Validate required fields
-            if (!name || !phone || !service || !date || !time) {
-                alert('Please fill in all required fields marked with *.');
-                return;
-            }
-            
-            // Validate date
-            const selectedDate = new Date(date);
-            const todayDate = new Date();
-            todayDate.setHours(0, 0, 0, 0);
-            
-            if (selectedDate < todayDate) {
-                alert('Please select a date in the future.');
-                return;
-            }
-            
-            // Create WhatsApp message
-            const message = `*NEW BOOKING - Arukah Wellness Spa*\n\n` +
-                           `👤 *Client Information:*\n` +
-                           `• Name: ${name}\n` +
-                           `• Phone: ${phone}\n` +
-                           (email ? `• Email: ${email}\n` : '') +
-                           `\n📅 *Appointment Details:*\n` +
-                           `• Service: ${service}\n` +
-                           `• Date: ${formatDate(date)}\n` +
-                           `• Time: ${time}\n` +
-                           (notes ? `\n📝 *Special Requests:*\n${notes}\n` : '') +
-                           `\n📍 *Location:*\n` +
-                           `Arukah Wellness Spa\n` +
-                           `15871 Rebecca Tlharipe Street, Pretoria\n\n` +
-                           `_Sent via website booking form_`;
-            
-            // WhatsApp number
-            const whatsappNumber = '27622990998';
-            const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
-            
-            // Show loading state
-            const submitBtn = this.querySelector('.submit-btn');
-            const originalText = submitBtn.innerHTML;
-            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-            submitBtn.disabled = true;
-            
-            // Open WhatsApp after delay
+            // Reset form after delay
             setTimeout(() => {
-                window.open(whatsappUrl, '_blank');
-                
-                // Reset form
                 bookingForm.reset();
                 submitBtn.innerHTML = originalText;
                 submitBtn.disabled = false;
@@ -186,218 +242,306 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
                 
                 // Show success message
-                alert('✅ Booking request sent!\n\nPlease check WhatsApp to send the message to our team.\n\nWe will confirm your appointment shortly.');
-            }, 1000);
+                alert('✓ Your booking request has been prepared!\n\nPlease send the message in WhatsApp to complete your booking.\n\nOur team will respond shortly to confirm your appointment.');
+            }, 1500);
+        }, 500);
+    });
+    
+    // Auto-format phone number for South Africa
+    const phoneInput = document.getElementById('clientPhone');
+    if (phoneInput) {
+        phoneInput.addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\D/g, '');
+            
+            if (value.startsWith('0')) {
+                // Format as 0XX XXX XXXX
+                if (value.length > 3 && value.length <= 6) {
+                    value = value.replace(/(\d{3})(\d+)/, '$1 $2');
+                } else if (value.length > 6) {
+                    value = value.replace(/(\d{3})(\d{3})(\d+)/, '$1 $2 $3');
+                }
+            } else if (value.startsWith('27')) {
+                // Format as +27 XX XXX XXXX
+                if (value.length > 2 && value.length <= 4) {
+                    value = value.replace(/(\d{2})(\d+)/, '+$1 $2');
+                } else if (value.length > 4 && value.length <= 7) {
+                    value = value.replace(/(\d{2})(\d{2})(\d+)/, '+$1 $2 $3');
+                } else if (value.length > 7) {
+                    value = value.replace(/(\d{2})(\d{2})(\d{3})(\d+)/, '+$1 $2 $3 $4');
+                }
+            }
+            
+            e.target.value = value;
         });
         
-        // Phone number formatting
-        const phoneInput = document.getElementById('clientPhone');
-        if (phoneInput) {
-            phoneInput.addEventListener('input', function(e) {
-                let value = e.target.value.replace(/\D/g, '');
-                
-                // Format South African numbers
-                if (value.length > 0) {
-                    if (value.startsWith('0')) {
-                        // Format as 0XX XXX XXXX
-                        if (value.length <= 3) {
-                            value = value;
-                        } else if (value.length <= 6) {
-                            value = value.replace(/(\d{3})(\d+)/, '$1 $2');
-                        } else {
-                            value = value.replace(/(\d{3})(\d{3})(\d+)/, '$1 $2 $3');
-                        }
-                    } else if (value.startsWith('27')) {
-                        // Format as +27 XX XXX XXXX
-                        value = '+27 ' + value.substring(2);
-                    }
-                }
-                
-                e.target.value = value;
+        // Validate South African phone number
+        phoneInput.addEventListener('blur', function() {
+            const value = this.value.replace(/\s/g, '');
+            const saRegex = /^(0[0-9]{9}|27[0-9]{9}|\+27[0-9]{9})$/;
+            
+            if (value && !saRegex.test(value)) {
+                this.style.borderColor = '#ff4444';
+                this.style.boxShadow = '0 0 0 2px rgba(255, 68, 68, 0.1)';
+            } else {
+                this.style.borderColor = '';
+                this.style.boxShadow = '';
+            }
+        });
+    }
+}
+
+// Gallery lightbox
+const galleryItems = document.querySelectorAll('.gallery-item');
+if (galleryItems.length > 0) {
+    // Create lightbox modal
+    const lightboxModal = document.createElement('div');
+    lightboxModal.className = 'lightbox-modal';
+    lightboxModal.style.cssText = `
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(44, 62, 58, 0.95);
+        display: none;
+        justify-content: center;
+        align-items: center;
+        z-index: 2000;
+        backdrop-filter: blur(10px);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    `;
+    
+    const lightboxContent = document.createElement('div');
+    lightboxContent.style.cssText = `
+        position: relative;
+        max-width: 90%;
+        max-height: 90%;
+        transform: scale(0.9);
+        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    `;
+    
+    const lightboxImg = document.createElement('img');
+    lightboxImg.style.cssText = `
+        width: 100%;
+        height: auto;
+        max-height: 80vh;
+        object-fit: contain;
+        border-radius: 12px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    `;
+    
+    const lightboxCaption = document.createElement('div');
+    lightboxCaption.style.cssText = `
+        text-align: center;
+        color: white;
+        margin-top: 20px;
+        font-family: 'Montserrat', sans-serif;
+    `;
+    
+    const closeLightbox = document.createElement('button');
+    closeLightbox.innerHTML = '<i class="fas fa-times"></i>';
+    closeLightbox.style.cssText = `
+        position: absolute;
+        top: -50px;
+        right: 0;
+        background: rgba(255, 255, 255, 0.1);
+        border: none;
+        color: white;
+        font-size: 24px;
+        cursor: pointer;
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+        backdrop-filter: blur(5px);
+    `;
+    
+    closeLightbox.addEventListener('mouseenter', () => {
+        closeLightbox.style.backgroundColor = 'rgba(255, 255, 255, 0.2)';
+        closeLightbox.style.transform = 'rotate(90deg)';
+    });
+    
+    closeLightbox.addEventListener('mouseleave', () => {
+        closeLightbox.style.backgroundColor = 'rgba(255, 255, 255, 0.1)';
+        closeLightbox.style.transform = 'rotate(0deg)';
+    });
+    
+    lightboxContent.appendChild(lightboxImg);
+    lightboxContent.appendChild(lightboxCaption);
+    lightboxContent.appendChild(closeLightbox);
+    lightboxModal.appendChild(lightboxContent);
+    document.body.appendChild(lightboxModal);
+    
+    // Open lightbox on gallery item click
+    galleryItems.forEach(item => {
+        item.addEventListener('click', () => {
+            const imgSrc = item.querySelector('img').src;
+            const title = item.querySelector('h3')?.textContent || '';
+            const description = item.querySelector('p')?.textContent || '';
+            
+            lightboxImg.src = imgSrc;
+            lightboxCaption.innerHTML = `
+                <h3 style="font-size: 20px; margin-bottom: 8px; font-family: 'Cormorant Garamond', serif;">${title}</h3>
+                ${description ? `<p style="font-size: 14px; opacity: 0.8;">${description}</p>` : ''}
+            `;
+            
+            lightboxModal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+            
+            // Animate in
+            setTimeout(() => {
+                lightboxModal.style.opacity = '1';
+                lightboxContent.style.transform = 'scale(1)';
+            }, 10);
+        });
+    });
+    
+    // Close lightbox
+    closeLightbox.addEventListener('click', () => {
+        lightboxModal.style.opacity = '0';
+        lightboxContent.style.transform = 'scale(0.9)';
+        
+        setTimeout(() => {
+            lightboxModal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }, 300);
+    });
+    
+    lightboxModal.addEventListener('click', (e) => {
+        if (e.target === lightboxModal) {
+            closeLightbox.click();
+        }
+    });
+    
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && lightboxModal.style.display === 'flex') {
+            closeLightbox.click();
+        }
+    });
+}
+
+// Set current year in footer
+document.querySelectorAll('.current-year').forEach(el => {
+    el.textContent = new Date().getFullYear();
+});
+
+// Smooth scrolling for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+            e.preventDefault();
+            window.scrollTo({
+                top: targetElement.offsetTop - 100,
+                behavior: 'smooth'
             });
         }
-    }
-    
-    // ========== CONTACT FORM ==========
-    const contactForm = document.getElementById('contactForm');
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const name = document.getElementById('contactName').value.trim();
-            const email = document.getElementById('contactEmail').value.trim();
-            const subject = document.getElementById('contactSubject').value;
-            const message = document.getElementById('contactMessage').value.trim();
-            
-            if (!name || !email || !subject || !message) {
-                alert('Please fill in all required fields.');
-                return;
-            }
-            
-            const contactMessage = `*CONTACT FORM - Arukah Wellness Spa*\n\n` +
-                                  `👤 From: ${name}\n` +
-                                  `📧 Email: ${email}\n` +
-                                  `📋 Subject: ${subject}\n\n` +
-                                  `💬 Message:\n${message}\n\n` +
-                                  `_Sent via website contact form_`;
-            
-            const whatsappUrl = `https://wa.me/27622990998?text=${encodeURIComponent(contactMessage)}`;
-            
-            // Show loading
-            const submitBtn = this.querySelector('.submit-btn');
-            const originalText = submitBtn.innerHTML;
-            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-            submitBtn.disabled = true;
-            
-            setTimeout(() => {
-                window.open(whatsappUrl, '_blank');
-                
-                // Reset form
-                contactForm.reset();
-                submitBtn.innerHTML = originalText;
-                submitBtn.disabled = false;
-                
-                alert('✅ Message sent!\n\nPlease check WhatsApp to send your inquiry.\n\nWe will respond within 24 hours.');
-            }, 1000);
-        });
-    }
-    
-    // ========== GALLERY LIGHTBOX ==========
-    const galleryItems = document.querySelectorAll('.gallery-item');
-    if (galleryItems.length > 0) {
-        // Create lightbox
-        const lightbox = document.createElement('div');
-        lightbox.className = 'lightbox';
-        lightbox.style.cssText = `
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0,0,0,0.9);
-            display: none;
-            justify-content: center;
-            align-items: center;
-            z-index: 3000;
-            padding: 20px;
-        `;
-        
-        const lightboxImg = document.createElement('img');
-        lightboxImg.style.cssText = `
-            max-width: 90%;
-            max-height: 90%;
-            border-radius: 10px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
-        `;
-        
-        const closeBtn = document.createElement('button');
-        closeBtn.innerHTML = '<i class="fas fa-times"></i>';
-        closeBtn.style.cssText = `
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background: rgba(255,255,255,0.1);
-            border: none;
-            color: white;
-            font-size: 24px;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        `;
-        
-        lightbox.appendChild(lightboxImg);
-        lightbox.appendChild(closeBtn);
-        document.body.appendChild(lightbox);
-        
-        // Open lightbox on image click
-        galleryItems.forEach(item => {
-            item.addEventListener('click', function() {
-                const img = this.querySelector('img');
-                if (img) {
-                    lightboxImg.src = img.src;
-                    lightbox.style.display = 'flex';
-                    document.body.style.overflow = 'hidden';
-                }
-            });
-        });
-        
-        // Close lightbox
-        closeBtn.addEventListener('click', function() {
-            lightbox.style.display = 'none';
-            document.body.style.overflow = 'auto';
-        });
-        
-        lightbox.addEventListener('click', function(e) {
-            if (e.target === lightbox) {
-                lightbox.style.display = 'none';
-                document.body.style.overflow = 'auto';
-            }
-        });
-        
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape' && lightbox.style.display === 'flex') {
-                lightbox.style.display = 'none';
-                document.body.style.overflow = 'auto';
-            }
-        });
-    }
-    
-    // ========== ANIMATIONS ==========
-    // Scroll animations
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('animated');
-            }
-        });
-    }, { threshold: 0.1 });
-    
-    document.querySelectorAll('.animate-on-scroll').forEach(el => {
-        observer.observe(el);
     });
-    
-    // ========== UTILITY FUNCTIONS ==========
-    function formatDate(dateString) {
-        const date = new Date(dateString);
-        return date.toLocaleDateString('en-GB', {
-            weekday: 'long',
-            year: 'numeric',
-            month: 'long',
-            day: 'numeric'
-        });
-    }
-    
-    // Set current year in footer
-    document.querySelectorAll('.current-year').forEach(el => {
-        el.textContent = new Date().getFullYear();
-    });
-    
-    // Active nav link highlighting
-    function highlightActiveNav() {
-        const currentPath = window.location.pathname;
-        const navLinks = document.querySelectorAll('.nav-link');
-        
-        navLinks.forEach(link => {
-            const linkPath = link.getAttribute('href');
-            if (currentPath.endsWith(linkPath) || 
-                (linkPath === 'index.html' && (currentPath.endsWith('/') || currentPath.endsWith('/index.html')))) {
-                link.classList.add('active');
-            } else {
-                link.classList.remove('active');
+});
+
+// Animation on scroll
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -100px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+            
+            // Add staggered animation for grid items
+            if (entry.target.classList.contains('service-card') || 
+                entry.target.classList.contains('gallery-item') ||
+                entry.target.classList.contains('value-item')) {
+                const delay = Array.from(entry.target.parentNode.children).indexOf(entry.target) * 0.1;
+                entry.target.style.transitionDelay = `${delay}s`;
             }
-        });
+        }
+    });
+}, observerOptions);
+
+// Observe elements with animation class
+document.querySelectorAll('.animate-on-scroll').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(30px)';
+    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    observer.observe(el);
+});
+
+// Parallax effect for hero section
+window.addEventListener('scroll', () => {
+    const heroSection = document.querySelector('.hero-section');
+    if (heroSection) {
+        const scrolled = window.pageYOffset;
+        const rate = scrolled * -0.5;
+        heroSection.style.backgroundPositionY = rate + 'px';
     }
+});
+
+// Active navigation link highlighting
+function highlightActiveNavLink() {
+    const currentPath = window.location.pathname;
+    const navLinks = document.querySelectorAll('.nav-link');
     
-    highlightActiveNav();
+    navLinks.forEach(link => {
+        const linkPath = link.getAttribute('href');
+        if (currentPath.endsWith(linkPath) || 
+            (linkPath === 'index.html' && currentPath.endsWith('/'))) {
+            link.classList.add('active');
+        } else {
+            link.classList.remove('active');
+        }
+    });
+}
+
+// Initialize when page loads
+document.addEventListener('DOMContentLoaded', () => {
+    highlightActiveNavLink();
     
-    // Initialize page
+    // Add loading animation to page
     document.body.style.opacity = '0';
+    document.body.style.transition = 'opacity 0.3s ease';
+    
     setTimeout(() => {
-        document.body.style.transition = 'opacity 0.3s';
         document.body.style.opacity = '1';
     }, 100);
+    
+    // Initialize form date restrictions
+    const dateInput = document.getElementById('appointmentDate');
+    if (dateInput) {
+        const today = new Date().toISOString().split('T')[0];
+        dateInput.min = today;
+        
+        const maxDate = new Date();
+        maxDate.setMonth(maxDate.getMonth() + 3);
+        dateInput.max = maxDate.toISOString().split('T')[0];
+    }
+});
+
+// WhatsApp float button click tracking
+const whatsappFloat = document.querySelector('.whatsapp-float');
+if (whatsappFloat) {
+    whatsappFloat.addEventListener('click', () => {
+        // You can add analytics tracking here
+        console.log('WhatsApp button clicked - Direct booking initiated');
+    });
+}
+
+// Add click event to all CTA buttons with booking functionality
+document.querySelectorAll('.cta-button, .submit-btn[data-service]').forEach(button => {
+    button.addEventListener('click', function() {
+        if (this.hasAttribute('data-service')) {
+            // This button will auto-fill the service in the modal
+            console.log('Service booking button clicked:', this.getAttribute('data-service'));
+        }
+    });
 });
