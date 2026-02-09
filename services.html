@@ -1,139 +1,57 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arukah Wellness | Services</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="assets/arukahlogo.jpeg" type="image/x-icon">
-</head>
-<body>
-    <!-- Header -->
-    <header>
-        <div class="container nav-container">
-            <a href="index.html" class="logo">
-                <img src="assets/arukahlogo.jpeg" alt="Arukah Logo" class="logo-img">
-            </a>
-            <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="services.html" class="active">Services</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="#book" class="booking-btn">Book Now</a></li>
-            </ul>
-        </div>
-    </header>
+<!-- Add this section to your index.html after the existing specials -->
 
-    <main>
-        <!-- Hero -->
-        <section class="page-hero">
-            <div class="container">
-                <h1>Our Premium Services</h1>
-                <p>Experience curated wellness treatments for mind, body, and spirit.</p>
-            </div>
-        </section>
-
-        <!-- NEW PACKAGES - ADD THIS SECTION -->
-        <section class="section-padding" style="background: #f9f5f0;">
-            <div class="container">
-                <h2 class="section-title">🎀 February Specials</h2>
-                <p class="subtitle">Celebrate friendship, self-love, and graceful aging</p>
-                
-                <div class="packages-grid">
-                    <!-- Package 1 -->
-                    <div class="package-card">
-                        <div class="package-badge">Besties for Life</div>
-                        <h3><i class="fas fa-heart"></i> Besties Package</h3>
-                        <p class="quote">"May your friendship flourish and withstand the test of time"</p>
-                        <ul>
-                            <li><i class="fas fa-check"></i> Full Body Massage for two</li>
-                            <li><i class="fas fa-check"></i> Complementary Ice Cream</li>
-                        </ul>
-                        <div class="package-info">
-                            <span class="price">R200 <small>for 2</small></span>
-                            <span class="duration">February Special</span>
-                        </div>
-                        <button class="book-btn" data-service="Besties for Life Package">Book Now</button>
-                    </div>
-
-                    <!-- Package 2 -->
-                    <div class="package-card">
-                        <div class="package-badge" style="background: #ff7eb3;">Self Love</div>
-                        <h3><i class="fas fa-spa"></i> Self Love Special</h3>
-                        <p class="quote">"Love yourself first, and everything else falls into line"</p>
-                        <ul>
-                            <li><i class="fas fa-check"></i> Full Body Massage</li>
-                            <li><i class="fas fa-check"></i> Facial Steaming (Express Facial)</li>
-                            <li><i class="fas fa-check"></i> Foot Scrub</li>
-                            <li><i class="fas fa-check"></i> Complementary Drink</li>
-                        </ul>
-                        <div class="package-info">
-                            <span class="price">R250 <small>per person</small></span>
-                            <span class="duration">February Only</span>
-                        </div>
-                        <button class="book-btn" data-service="Self Love Package">Book Now</button>
-                    </div>
-
-                    <!-- Package 3 -->
-                    <div class="package-card">
-                        <div class="package-badge" style="background: #8a7fff;">Age with Grace</div>
-                        <h3><i class="fas fa-crown"></i> Pensioners Package</h3>
-                        <p class="quote">"Aging has a wonderful beauty, and we should have respect for that"</p>
-                        <ul>
-                            <li><i class="fas fa-check"></i> Full Body Massage</li>
-                            <li><i class="fas fa-check"></i> Foot Scrub</li>
-                            <li><i class="fas fa-check"></i> +R50 for Facial Add-on</li>
-                        </ul>
-                        <div class="package-info">
-                            <span class="price">R150 <small>60+ years</small></span>
-                            <span class="duration">Special Rate</span>
-                        </div>
-                        <button class="book-btn" data-service="Age with Grace Package">Book Now</button>
-                    </div>
+<section class="february-specials section-padding">
+    <div class="container">
+        <h2 class="section-title">🎀 February Special Packages</h2>
+        <p class="page-subtitle" style="text-align: center; margin-bottom: 40px;">
+            Limited time offers for February
+        </p>
+        
+        <div class="services-grid">
+            <!-- Besties Card -->
+            <div class="service-card animate-on-scroll">
+                <div class="service-icon" style="background: linear-gradient(135deg, #FF6B8B 0%, #FF8E53 100%);">
+                    <i class="fas fa-heart"></i>
                 </div>
-            </div>
-        </section>
-
-        <!-- Existing packages continue here... -->
-        <!-- Add to existing booking form in services.html -->
-        <select class="form-select" id="serviceType" required>
-            <option value="">Select a service</option>
-            <!-- Existing options... -->
-            <option value="Besties for Life Package (R200 for two)">Besties for Life Package (R200 for two)</option>
-            <option value="Self Love Package (R250)">Self Love Package (R250)</option>
-            <option value="Age with Grace Package (R150)">Age with Grace Package (R150)</option>
-            <option value="Age with Grace + Facial (R200)">Age with Grace + Facial (R200)</option>
-            <!-- Continue with existing options... -->
-        </select>
-    </main>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-top">
-                <div class="footer-col">
-                    <img src="assets/arukahlogo.jpeg" alt="Logo" class="footer-logo">
-                    <p>A sanctuary for holistic wellness and rejuvenation.</p>
+                <h3 class="service-title">Besties for Life</h3>
+                <p class="service-description">Perfect for besties under 18. Full body massage + ice cream for two.</p>
+                <div style="margin-top: 15px; color: var(--primary); font-weight: 600; font-size: 22px;">
+                    R200 for two
                 </div>
-                <div class="footer-col">
-                    <h4>Contact</h4>
-                    <p><i class="fas fa-map-marker-alt"></i> 15871 Rebecca Tlharipe Street</p>
-                    <p><i class="fab fa-whatsapp"></i> 062 299 0998</p>
-                    <p><i class="fas fa-envelope"></i> support@arukahkagiso.co.za</p>
-                </div>
+                <button class="book-btn" data-service="Besties for Life Package" style="margin-top: 15px;">
+                    <i class="fas fa-heart"></i> Book Now
+                </button>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Arukah Wellness Spa</p>
+            
+            <!-- Self Love Card -->
+            <div class="service-card animate-on-scroll">
+                <div class="service-icon" style="background: linear-gradient(135deg, #FF7EB3 0%, #FF758C 100%);">
+                    <i class="fas fa-spa"></i>
+                </div>
+                <h3 class="service-title">Self Love Special</h3>
+                <p class="service-description">Massage, facial steaming, foot scrub + complementary drink.</p>
+                <div style="margin-top: 15px; color: var(--primary); font-weight: 600; font-size: 22px;">
+                    R250 per person
+                </div>
+                <button class="book-btn" data-service="Self Love Package" style="margin-top: 15px;">
+                    <i class="fas fa-heart"></i> Book Now
+                </button>
+            </div>
+            
+            <!-- Age with Grace Card -->
+            <div class="service-card animate-on-scroll">
+                <div class="service-icon" style="background: linear-gradient(135deg, #8A7FFF 0%, #6B5FFF 100%);">
+                    <i class="fas fa-crown"></i>
+                </div>
+                <h3 class="service-title">Age with Grace</h3>
+                <p class="service-description">Special rate for 60+. Massage + foot scrub. Add facial +R50.</p>
+                <div style="margin-top: 15px; color: var(--primary); font-weight: 600; font-size: 22px;">
+                    R150
+                </div>
+                <button class="book-btn" data-service="Age with Grace Package" style="margin-top: 15px;">
+                    <i class="fas fa-crown"></i> Book Now
+                </button>
             </div>
         </div>
-    </footer>
-
-    <a href="https://wa.me/27622990998" class="whatsapp-btn"><i class="fab fa-whatsapp"></i></a>
-
-    <script src="script.js"></script>
-</body>
-</html>
+    </div>
+</section>
